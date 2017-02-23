@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    	<meta name="keywords" content="wikipedia, wiki, search, research, find, description, definition">
+    	<meta name="description" content="Find your answers here.">
+
+        <title>WikiQuery</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="container-header">
+                <h1 class="logo">WikiQuery</h1>
+            </div>
+        </header>
+        <div class="jumbotron"
+            <div class="container">
+                {% if article %}
+                    <div class="column-one">
+                        <h1>{{ article }}</h1>
+                        <p></p>
+                    </div>
+                    <div class="column-two">
+                    </div>
+                    <a href="{{ url_for('index') }}">Search more stuff | </a>
+                {% else %}
+                    <h1>Welcome to WikiQuery!</h1>
+                    <h2></h2>
+                    <h4>Enter your search terms below.</h4>
+                    <form action="/" class="form-inline">
+                        <div class="form-group">
+                            <input type="text" name="terms" class="form-control" placeholder="terms">
+                        </div>
+                        <input type="submit" value="Submit" class="button">
+                    </form>
+                {% endif %}
+                <a href="{{ url_for('about') }}">About WikiQuery</a>
+            </div>
+        </div>
+    </body>
+</html>
