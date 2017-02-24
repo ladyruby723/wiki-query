@@ -10,12 +10,13 @@ header {
 
 body {
     background-color: #410A10;
+    border-radius: 100%;
+
 }
 
 .container-header {
     color: #EEE0B7;
     font-size: 75px;
-    border: dotted 10px #EEE0B7;
 }
 
 .jumbotron {
