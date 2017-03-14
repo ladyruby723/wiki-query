@@ -18,15 +18,30 @@
             <div class="container">
                 {% if article %}
                     <div class="column-one">
-                        <h1>{{ article }}</h1>
-                        <p></p>
+                        <h2>{{ article }}</h2>
                     </div>
                     <div class="column-two">
                     </div>
                     <a href="{{ url_for('index') }}">Search more stuff | </a>
+                {% elif categories %}
+                    <div class="column-one">
+                        <h2>{{ categories }}</h2>
+                        <p></p>
+                        <h4>Enter one of these categories in the search box below, <br/>
+                        or enter another specific category (ambiguous entries may <br/>
+                        confuse WikiQuery).</h4>
+                    </div>
+                    <div class="column-two">
+                        <form action="/" class="form-inline">
+                            <div class="form-group">
+                                <input type="text" name="specific terms" class="form-control" placeholder="specific terms">
+                            </div>
+                            <input type="submit" value="Submit" class="button">
+                        </form>
+                    </div>
+                    <a href="{{ url_for('index') }}">Search more stuff | </a>
                 {% else %}
                     <h1>Welcome to WikiQuery!</h1>
-                    <h2></h2>
                     <h4>Enter your search terms below.</h4>
                     <form action="/" class="form-inline">
                         <div class="form-group">

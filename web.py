@@ -6,9 +6,14 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     terms = request.values.get('terms')
+    specific_terms = request.values.get('specific terms')
     article = None
+    categories = None
     if terms:
-        article = wikipedia.summary(terms)
+        categories = wikipedia.search(terms)
+        return render_template('index.html', categories=categories)
+    elif specific_terms:
+        article = wikipedia.summary(specific_terms)
         return render_template('index.html', article=article)
     else:
         return render_template('index.html')
