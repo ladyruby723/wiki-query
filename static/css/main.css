@@ -14,7 +14,7 @@ body {
 
 .container-header {
     font-size: 75px;
-    align: left;
+    text-align: left;
 }
 
 .jumbotron {
@@ -29,13 +29,13 @@ h1 {
     font-size: 35px;
     font-style: bold;
     line-height: 1.0;
-    padding: 2em;
+    padding: 2px;
 }
 
 h2 {
     font-size: 20px;
     line-height: 1.2;
-    padding: 2em;
+    padding: 2px;
 }
 
 h3 {
